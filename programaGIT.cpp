@@ -32,3 +32,14 @@ int contaPalavras(string palavra, string texto)
 	}
 	return qtd;
 }
+void substituirPalavras(string plvr_1,string plvr_2,string texto)
+{
+	int i,posicao;
+	posicao=texto.find(plvr_1,0);
+	while(posicao!=-1)
+	{
+		texto.replace(posicao,plvr_1.length(),plvr_2);
+		posicao=texto.find(plvr_1,posicao+1);
+	}
+	return texto;
+}
