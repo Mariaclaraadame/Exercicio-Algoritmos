@@ -21,3 +21,14 @@ void substituirLetra(char letra1,char letra2, string texto,int totletras)
     }
   }
 }
+int contaPalavras(string palavra, string texto)
+{
+	int qtd=0,posicao;
+	posicao=texto.find(palavra,0);
+	while(posicao!=-1)
+	{
+		qtd++;
+		posicao=texto.find(palavra,posicao+1);
+	}
+	return qtd;
+}
