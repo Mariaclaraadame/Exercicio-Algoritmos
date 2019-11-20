@@ -1,3 +1,14 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+
+
+
+
+
 int contaLetras(char letra, string texto,int totletras)
 {
   int i,qtd=0;
@@ -42,4 +53,29 @@ void substituirPalavras(string plvr_1,string plvr_2,string texto)
 		posicao=texto.find(plvr_1,posicao+1);
 	}
 	return texto;
+}
+
+int main()
+{
+  string texto, plvr_1, plvr_2;
+  char letra, subs;
+  int comp;
+  cout<<"Insira o texto: \n";
+  get.line(cin,texto);
+  comp=texto.length();
+  cout<<"\nDigite o caractere que deseja buscar: ";
+  cin>>letra;
+  cout<<"\nA letra aparece "<< contaLetras(letra,texto,comp) <<"vezes.\n";
+  cout<<"\nDigite o caractere a ser inserido no lugar: ";
+  cin>>subs;
+  substituirLetra(letra,subs,texto,comp);
+  cout<<"\nVersao att: \t"<<texto;
+  cout<<"\nDigite a palavra a ser buscada: ";
+  get.line(cin,plvr_1);
+  cout<<"\nA palavra aparece "<<contaPalavras(plvr_1,texto)<<" vezes.";
+  cout<<"\nDigite a palavra a ser colocada no lugar: ";
+  get.line(cin,plvr_2);
+  substituirPalavras(plvr_1,plvr_2,texto);
+  cout<<"\nVersao att: \t"<<texto;
+  return 0;
 }
